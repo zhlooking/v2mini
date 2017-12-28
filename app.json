@@ -1,11 +1,16 @@
+
 {
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
+
     "pages/v2/v2ex/v2ex",
     "pages/v2/detail/detail",
     "pages/v2/v2node/v2node",
-    "pages/v2/node_detail/node_detail"
+    "pages/v2/node_detail/node_detail",
+
+    "pages/zcool/home/home",
+    "pages/zcool/preview/preview"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +33,13 @@
       },
       {
         "pagePath": "pages/v2/v2ex/v2ex",
-        "text": "v2ex",
+        "text": "V2EX",
+        "iconPath": "images/icon_component.png",
+        "selectedIconPath": "images/icon_component_HL.png"
+      },
+      {
+        "pagePath": "pages/zcool/home/home",
+        "text": "ZCOOL",
         "iconPath": "images/icon_component.png",
         "selectedIconPath": "images/icon_component_HL.png"
       },

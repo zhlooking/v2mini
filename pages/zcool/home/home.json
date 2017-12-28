@@ -1,10 +1,7 @@
 {
-  "usingComponents": {
-    "topic-cell": "../../../components/topic_cell/topic_cell"
-  },
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "V2EX接口功能演示",
+  "navigationBarTitleText": "ZCOOL接口功能演示",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light"
 }
