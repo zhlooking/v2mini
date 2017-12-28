@@ -1,0 +1,22 @@
+<!--pages/v2detail/v2detail.wxml-->
+
+<view wx:key="id" wx:for="{{replies}}" wx:for-index="idx" wx:for-item="reply" data-index="{{idx}}" bindtap="handleClickReply" class="reply">
+  <view class="reply-head">
+    <view class="head-left">
+      <image class="reply-avatar" src="{{reply.member.avatar_mini}}" />
+      <view class="detail-wrapper">
+        <text>{{reply.member.username}}</text>
+
+        <text>{{reply.last_modified}}</text>
+      </view>
+    </view>
+    <view class="head-right">
+      <text class="thanks">{{reply.thanks}}</text>
+    </view>
+  </view>
+  <view class="reply-title-wrapper">
+    <text>
+      {{reply.content}}
+    </text>
+  </view>
+</view>

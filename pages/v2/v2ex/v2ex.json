@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "topic-cell": "../../../components/topic_cell/topic_cell"
+  }
+}

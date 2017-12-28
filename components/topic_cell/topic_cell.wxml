@@ -1,0 +1,35 @@
+<!--components/topic_cell/topic_cell.wxml-->
+
+<view 
+  name="topic_cell"
+  bindtap="handleClickTopic"
+  class="topic"
+  hover-class="topic-hover"
+>
+  <view class="topic-head">
+    <view class="head-left">
+      <image 
+        class="topic-avatar"
+        src="{{topic.member.avatar_normal}}"
+      />
+      <view class="detail-wrapper">
+        <text class="head-username">{{topic.member.username}}</text>
+        <text class="head-time">{{topic.last_modified}}</text>
+      </view>
+    </view>
+    <view class="head-right">
+      <text 
+        class="node-name" 
+        hover-class="node-name-hover" 
+        catchtap="handleClickNodeName" 
+        data-node-name="{{topic.node.name}}"
+      >{{topic.node.title}}</text>
+      <text class="replies">{{topic.replies}}</text>
+    </view>
+  </view>
+  <view class="topic-title-wrapper">
+    <text>
+      {{topic.title}}
+    </text>
+  </view> 
+</view>

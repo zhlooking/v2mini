@@ -1,0 +1,17 @@
+
+<!--pages/v2ex/v2ex.wxml-->
+
+<view 
+  wx:key="id" 
+  wx:for="{{posts}}"
+  wx:for-index="idx" 
+  wx:for-item="post"
+  data-index="{{idx}}" 
+  bindtap="handleClickPost"
+>
+  <topic-cell 
+    topic="{{post}}" 
+    bind:handleClickTopic="handleClickTopic"
+    bind:handleClickNodeName="handleClickNodeName"
+  ></topic-cell>
+</view>

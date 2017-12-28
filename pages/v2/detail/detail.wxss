@@ -1,0 +1,48 @@
+/* pages/v2detail/v2detail.wxss */
+
+.reply {
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.reply-hover {
+  background-color: lightblue;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.reply-head {
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  height:30px;
+  padding:0 8px;
+}
+
+.head-left {
+  float: left;
+  display: flex;
+}
+
+.thanks {
+  color: red;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.reply-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.reply-title-wrapper {
+  font-size: 16px;
+  padding: 0 8px;
+}

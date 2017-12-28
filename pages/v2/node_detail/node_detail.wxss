@@ -1,0 +1,8 @@
+/* pages/v2/node_detail/node_detail.wxss */
+
+.empty-holder {
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

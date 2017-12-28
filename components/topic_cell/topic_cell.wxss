@@ -1,0 +1,65 @@
+/* components/topic_cell/topic_cell.wxss */
+
+.topic {
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.topic-hover {
+  background-color: lightblue;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightgray;
+}
+
+.topic-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  height: 40px;
+  padding: 8px;
+  /* background-color: lightyellow; */
+}
+
+.head-left {
+  float: left;
+  display: flex;
+}
+
+.head-username {
+  padding-bottom:4px;
+  font-size:18px;
+}
+
+.head-time {
+  font-size: 12px;
+}
+
+.node-name {
+  margin-right: 8px;
+  background-color:lightgray;
+  border-radius:10px;
+  padding:1px 4px;
+}
+
+.node-name-hover {
+  background-color: lightblue;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.topic-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.topic-title-wrapper {
+  font-size: 18px;
+  padding: 0 8px;
+}

@@ -1,0 +1,17 @@
+/* pages/v2/v2node/v2node.wxss */
+
+.node {
+  background-color: lightgray;
+  display: inline-block;
+  margin: 10px;
+  padding: 4px;
+  border-radius: 18px;
+}
+
+.node-hover {
+  background-color: lightblue;
+  display: inline-block;
+  margin: 10px;
+  padding: 4px;
+  border-radius: 18px;
+}

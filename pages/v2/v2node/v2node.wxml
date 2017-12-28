@@ -1,0 +1,5 @@
+<!--pages/v2/v2node/v2node.wxml-->
+
+<view wx:key="id" wx:for="{{nodes}}" wx:for-index="idx" wx:for-item="node" data-index="{{idx}}" bindtap="handleClickNode" class="node" hover-class="node-hover">
+  <text>{{node.title}}</text>
+</view>

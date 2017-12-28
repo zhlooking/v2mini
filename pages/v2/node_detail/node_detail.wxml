@@ -1,0 +1,21 @@
+<!--pages/v2/node_detail/node_detail.wxml-->
+
+<view wx:if="{{!topics.length}}" class="empty-holder">
+  <text>没有主题数据</text>
+</view>
+<block wx:else>
+  <view 
+    wx:key="id" 
+    wx:for="{{topics}}"
+    wx:for-index="idx"
+    wx:for-item="post" 
+    data-index="{{idx}}" 
+    bindtap="handleClickTopic" 
+  >
+    <topic-cell 
+      topic="{{post}}" 
+      bind:handleClickTopic="handleClickTopic"
+      bind:handleClickNodeName="handleClickNodeName"
+    ></topic-cell>
+  </view>
+</block>
