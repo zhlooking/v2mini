@@ -1,3 +1,4 @@
+
 // pages/zcool/home/home.js
 Page({
 
@@ -69,6 +70,9 @@ Page({
   */
   getRecommendTemplates: function () {
     var that = this;
+    wx.showLoading({
+      title: '加载中',
+    });
     wx.request({
       url: 'http://test.zweb.zcool.cn/api/recomTemplateList.do',
       method: 'POST',
@@ -77,6 +81,9 @@ Page({
       },
       success: function (res) {
         that.setData({templates: res.data ? res.data : []})
+      },
+      complete: function () {
+        wx.hideLoading();
       }
     })
   },
