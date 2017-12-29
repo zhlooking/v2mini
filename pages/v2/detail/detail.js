@@ -49,14 +49,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('----> onPullDownRefresh');
+    console.log('-- onPullDownRefresh');
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('----> onReachBottom');
+    console.log('-- onReachBottom');
   },
 
   /**
@@ -71,13 +71,42 @@ Page({
    */
   getAllRepliesWithTopicId: function () {
     var that = this
+
     wx.request({
       url: 'https://www.v2ex.com/api/replies/show.json?topic_id=' + this.data.postId,
       success: function (res) {
-        var replies = res.data;
-        console.log('---> replies', res, replies)
-        that.setData({ replies: replies })
+        that.setData({ replies: res.data.map(that.formatReply) })
       }
+    })
+  },
+
+  formatReply: function (reply) {
+    return {
+      ...reply,
+      member: {
+        ...reply.member,
+        avatar_large: 'https:' + reply.member.avatar_large,
+        avatar_normal: 'https:' + reply.member.avatar_normal,
+        avatar_mini: 'https:' + reply.member.avatar_mini,
+      }
+    }
+  },
+
+  /**
+   * 点击评论项目
+   */
+  handleClickReply: function () {
+    console.warn('handleClickReply method not implemented')
+  },
+
+  /**
+   * 点击评论中用户头像
+   */
+  handleClickUserAvatar: function (evt) {
+    var user = evt.currentTarget.dataset.user;
+
+    wx.navigateTo({
+      url: '../v2user/v2user?id=' + user.id,
     })
   }
 })

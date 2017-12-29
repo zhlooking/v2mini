@@ -1,3 +1,4 @@
+const util = require('../../../utils/util.js')
 
 // pages/zcool/home/home.js
 Page({
@@ -80,12 +81,22 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        that.setData({templates: res.data ? res.data : []})
+        that.setData({templates: res.data ? res.data.map(that.formatTemplate) : []})
       },
       complete: function () {
         wx.hideLoading();
       }
     })
+  },
+
+  formatTemplate: function (template) {
+    return {
+      ...template, 
+      template: {
+        ...template.template, 
+        createTime: util.formatTimeWithoutHour(new Date(template.template.createTime))
+      }
+    }
   },
 
   /**
@@ -103,6 +114,6 @@ Page({
    */
   handleCreateProject: function (evt) {
     const template = evt.currentTarget.dataset.template;
-    console.log('-------------------> create project', template)
+    console.warn('create project', template)
   },
 })

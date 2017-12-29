@@ -3,10 +3,14 @@
 <view wx:key="id" wx:for="{{replies}}" wx:for-index="idx" wx:for-item="reply" data-index="{{idx}}" bindtap="handleClickReply" class="reply">
   <view class="reply-head">
     <view class="head-left">
-      <image class="reply-avatar" src="{{reply.member.avatar_mini}}" />
+      <image 
+        class="reply-avatar" 
+        src="{{reply.member.avatar_mini}}"
+        data-user="{{reply.member}}"
+        catchtap="handleClickUserAvatar"
+      />
       <view class="detail-wrapper">
         <text>{{reply.member.username}}</text>
-
         <text>{{reply.last_modified}}</text>
       </view>
     </view>

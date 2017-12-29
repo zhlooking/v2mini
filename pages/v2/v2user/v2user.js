@@ -1,33 +1,34 @@
-// pages/v2/v2node/v2node.js
+// pages/v2/v2user/v2user.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name: '',
-    nodes: []
+    id: '',
+    user: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({name: options.name})
+    var id = options.id
+    this.setData({id: id})
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getAllV2Nodes()
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getUserInfoWithId();
   },
 
   /**
@@ -66,26 +67,15 @@ Page({
   },
 
   /**
-   * 获取所有的v2ex节点
+   * 获取用户信息
    */
-  getAllV2Nodes: function () {
+  getUserInfoWithId: function () {
     var that = this;
     wx.request({
-      url: 'https://www.v2ex.com/api/nodes/all.json',
+      url: 'https://www.v2ex.com/api/members/show.json?id=' + this.data.id,
       success: function (res) {
-        that.setData({ nodes: res.data})
+        that.setData({user: res.data})
       }
-    })
-  },
-
-  /**
-   * 点击跳转到相应的node节点
-   */
-  handleClickNode: function (e) {
-    var nodeIndex = e.currentTarget.dataset.index;
-    var node = this.data.nodes[nodeIndex]
-    wx.navigateTo({
-      url: '../node_detail/node_detail?name=' + node.name,
     })
   }
 })

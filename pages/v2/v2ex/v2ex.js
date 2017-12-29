@@ -78,9 +78,17 @@ Page({
       success: function (res) {
         var data = res.data
         data = data.map(function (item) {
-          return { ...item, last_modified: util.formatTime(new Date(item.last_modified * 1000))}
+          return {
+            ...item, 
+            last_modified: util.formatTime(new Date(item.last_modified * 1000)), 
+            member: { 
+              ...item.member, 
+              avatar_large: 'https:' + item.member.avatar_large,
+              avatar_normal: 'https:' + item.member.avatar_normal,
+              avatar_mini: 'https:' + item.member.avatar_mini
+            }
+          }
         })
-        console.log('=========================', data)
         that.setData({ posts: data })
       }
     })
@@ -91,8 +99,7 @@ Page({
    */
   handleClickPost: function (e) {
     var post = this.data.posts[e.currentTarget.dataset.index];
-    console.log('-----------> post', post)
-  
+
     wx.navigateTo({
       url: '../detail/detail?postId=' + post.id,
     })
@@ -102,9 +109,7 @@ Page({
    * 点击节点名称
    */
   handleClickNodeName: function (e) {
-    e.stop
     var nodeName = e.currentTarget.dataset.nodeName;
-    console.log('------------> ', e)
 
     wx.navigateTo({
       url: '../v2node/v2node?name=' + nodeName,

@@ -85,10 +85,9 @@ Page({
    */
   handleClickTopic: function (e) {
     var post = this.data.topics[e.currentTarget.dataset.index];
-    console.log('-----------> topic', post)
+
     wx.navigateTo({
       url: '../detail/detail?postId=' + post.id,
     })
   },
-
 })

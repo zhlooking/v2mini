@@ -9,25 +9,23 @@
   bindtap="handleClickTemplate" 
   class="template"
 >
-  <view class="temp-item">
-    <image class="cover-image" src="{{template.template.coverImage}}"/>
-    <text class="temp-name text-ellipsis">{{template.template.name}}</text>
-    <text class="temp-price">价格：<text>免费</text></text>
-    <view class="options">
-      <button data-template="{{template.template}}" bindtap="handleCreateProject">
-        创建新项目
-      </button>
-      <button data-template="{{template.template}}" bindtap="handlePreviewTemplate">
-        查看模板效果
-      </button>
+  <image class="cover-image" src="{{template.template.coverImage}}"/>
+  <text class="temp-name text-ellipsis">{{template.template.name}}</text>
+  <text class="temp-price">价格：<text>免费</text></text>
+  <view class="options">
+    <button data-template="{{template.template}}" bindtap="handleCreateProject">
+      创建新项目
+    </button>
+    <button data-template="{{template.template}}" bindtap="handlePreviewTemplate">
+      查看模板效果
+    </button>
+  </view>
+  <view class="author">
+    <view class="avatar-name">
+      <image class="author-avatar" src="{{template.user.headImage}}"></image>
+      <text>设计师：</text>
+      <text>{{template.user.username}}</text>
     </view>
-    <view class="author">
-      <view class="avatar-name">
-        <image class="author-avatar" src="{{template.user.headImage}}"></image>
-        <text>设计师：</text>
-        <text>{{template.user.username}}</text>
-      </view>
-      <text>{{template.template.createTime}}</text>
-    </view>
+    <text>{{template.template.createTime}}</text>
   </view>
 </view>

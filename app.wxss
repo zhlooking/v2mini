@@ -15,3 +15,7 @@
   width: 200rpx;
   height: 40rpx;
 }
+
+text {
+  word-wrap:break-word;
+}

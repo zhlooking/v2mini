@@ -1,5 +1,5 @@
 /* pages/v2ex/v2ex.wxss */
 
 page {
-  background-color: lightcyan;
+   background-color: #eee; 
 }

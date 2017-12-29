@@ -29,8 +29,9 @@
 }
 
 .head-username {
-  padding-bottom:4px;
-  font-size:18px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .head-time {
