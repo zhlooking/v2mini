@@ -8,7 +8,8 @@
     "pages/v2/node_detail/node_detail",
     "pages/zcool/home/home",
     "pages/zcool/preview/preview",
-    "pages/v2/v2user/v2user"
+    "pages/v2/v2user/v2user",
+    "pages/canvas/canvas"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,9 @@
+/* pages/canvas_two/two.wxss */
+.container {
+  padding: 0;
+}
+
+canvas {
+  height: 700px;
+  width:100%;
+}

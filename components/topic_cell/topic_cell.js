@@ -7,7 +7,7 @@ Component({
     topic: {
       type: Object,
       value: {},
-      observer: function (newVal, oldVal) {}
+      observer: (newVal, oldVal) => {}
     }
   },
 
@@ -21,7 +21,7 @@ Component({
   /**
    * 组件生命周期函数，在组件实例进入页面节点树时执行
    */
-  attached: function () {
+  attached() {
     // 将外部传入的值复制给value，当然也可以直接使用key值
   },
 
@@ -29,10 +29,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleClickTopic: function (evt) {
+    handleClickTopic(evt) {
       this.triggerEvent('handleClickTopic', evt)
     },
-    handleClickNodeName: function (evt) {
+
+    handleClickNodeName(evt) {
       this.triggerEvent('handleClickNodeName', evt)
     }
   }

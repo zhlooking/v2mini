@@ -16,6 +16,10 @@
   color: #aaa;
 }
 
-.usermotto {
+.motto-wrapper {
   margin-top: 200px;
+}
+
+.motto {
+  display: block;
 }

@@ -1,4 +1,6 @@
 // pages/v2detail/v2detail.js
+const util = require('../../../utils/util.js')
+
 Page({
 
   /**
@@ -12,70 +14,61 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var postId = options.postId;
-    this.setData({ postId: postId })
+  onLoad(options) {
+    const postId = options.postId;
+    this.setData({ postId })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady() {
     this.getAllRepliesWithTopicId();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh() {
     console.log('-- onPullDownRefresh');
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom() {
     console.log('-- onReachBottom');
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   },
 
   /**
    * 获取帖子下的所有评论
    */
-  getAllRepliesWithTopicId: function () {
-    var that = this
-
+  getAllRepliesWithTopicId() {
     wx.request({
       url: 'https://www.v2ex.com/api/replies/show.json?topic_id=' + this.data.postId,
-      success: function (res) {
-        that.setData({ replies: res.data.map(that.formatReply) })
+      success: res => {
+        this.setData({ replies: res.data.map(that.formatReply) })
       }
     })
   },
@@ -85,6 +78,7 @@ Page({
       ...reply,
       member: {
         ...reply.member,
+        last_modified: util.formatTime(new Date(item.last_modified * 1000)),
         avatar_large: 'https:' + reply.member.avatar_large,
         avatar_normal: 'https:' + reply.member.avatar_normal,
         avatar_mini: 'https:' + reply.member.avatar_mini,
@@ -103,7 +97,7 @@ Page({
    * 点击评论中用户头像
    */
   handleClickUserAvatar: function (evt) {
-    var user = evt.currentTarget.dataset.user;
+    const user = evt.currentTarget.dataset.user;
 
     wx.navigateTo({
       url: '../v2user/v2user?id=' + user.id,

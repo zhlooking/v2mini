@@ -9,13 +9,21 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap() {
     wx.switchTab({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+
+  bindCanvasTap() {
+    wx.navigateTo({
+      url: '../canvas/canvas',
+    })
+  },
+
+  onLoad() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,7 +51,8 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+
+  getUserInfo(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

@@ -17,7 +17,7 @@
 .topic-head {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 12px;
   height: 40px;
   padding: 8px;
   /* background-color: lightyellow; */
@@ -30,7 +30,7 @@
 
 .head-username {
   padding-bottom: 8px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -61,6 +61,6 @@
 }
 
 .topic-title-wrapper {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 8px;
 }
