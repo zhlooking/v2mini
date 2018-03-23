@@ -1,16 +1,15 @@
 <!--pages/v2/node_detail/node_detail.wxml-->
 
-<view wx:if="{{!topics.length}}" class="empty-holder">
+<view wx:if="{{!topics.length && loading===false}}" class="empty-holder">
   <text>没有主题数据</text>
 </view>
 <block wx:else>
-  <view 
-    wx:key="id" 
+  <view
+    wx:key="id"
     wx:for="{{topics}}"
     wx:for-index="idx"
-    wx:for-item="post" 
-    data-index="{{idx}}" 
-    bindtap="handleClickTopic" 
+    wx:for-item="post"
+    data-index="{{idx}}"
   >
     <topic-cell 
       topic="{{post}}" 

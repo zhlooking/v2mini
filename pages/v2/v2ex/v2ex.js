@@ -1,5 +1,6 @@
 // pages/v2ex/v2ex.js
 const util = require('../../../utils/util.js')
+import { ZGetRequest } from '../../../utils/network.js'
 
 Page({
 
@@ -63,13 +64,12 @@ Page({
    * 获取V2ex接口数据
    */
   getV2HotPosts() {
-    wx.request({
+    ZGetRequest({
       url: 'https://www.v2ex.com/api/topics/hot.json',
       success: res => {
         const data = res.data.map(item => {
           return {
             ...item,
-            last_modified: util.formatTime(new Date(item.last_modified * 1000)),
             member: {
               ...item.member,
               avatar_large: 'https:' + item.member.avatar_large,

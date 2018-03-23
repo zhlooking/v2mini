@@ -1,6 +1,12 @@
 //app.js
+import ErrorUploader from './utils/error_uploader.js'
+
 App({
   onLaunch() {
+    // 初始化错误上传单例
+    const errorUploader = new ErrorUploader()
+    errorUploader.init()
+
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

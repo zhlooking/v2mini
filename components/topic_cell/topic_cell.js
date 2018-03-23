@@ -30,6 +30,7 @@ Component({
    */
   methods: {
     handleClickTopic(evt) {
+      console.log('---> handleClickTopic', evt)
       this.triggerEvent('handleClickTopic', evt)
     },
 

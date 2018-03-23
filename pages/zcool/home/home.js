@@ -1,4 +1,5 @@
 const util = require('../../../utils/util.js')
+import { ZPostRequest } from '../../../utils/network.js'
 
 // pages/zcool/home/home.js
 Page({
@@ -60,25 +61,14 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-  
-  },
-
-  /**
    * 获取推荐模板数据
   */
   getRecommendTemplates() {
     wx.showLoading({
       title: '加载中',
     });
-    wx.request({
+    ZPostRequest({
       url: 'http://test.zweb.zcool.cn/api/recomTemplateList.do',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
       success: res => {
         this.setData({templates: res.data ? res.data.map(this.formatTemplate) : []})
       },
@@ -90,7 +80,7 @@ Page({
 
   formatTemplate: template => {
     return {
-      ...template, 
+      ...template,
       template: {
         ...template.template, 
         createTime: util.formatTimeWithoutHour(new Date(template.template.createTime))

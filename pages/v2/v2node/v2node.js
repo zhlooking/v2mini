@@ -1,6 +1,7 @@
 // pages/v2/v2node/v2node.js
-Page({
+import { ZGetRequest } from '../../../utils/network.js'
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -69,7 +70,7 @@ Page({
    * 获取所有的v2ex节点
    */
   getAllV2Nodes() {
-    wx.request({
+    ZGetRequest({
       url: 'https://www.v2ex.com/api/nodes/all.json',
       success: res => {
         this.setData({ nodes: res.data})

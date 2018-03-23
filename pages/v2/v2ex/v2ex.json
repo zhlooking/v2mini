@@ -6,5 +6,6 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "V2EX接口功能演示",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light"
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
 }

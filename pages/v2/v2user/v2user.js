@@ -1,4 +1,6 @@
 // pages/v2/v2user/v2user.js
+import { ZGetRequest } from '../../../utils/network.js'
+
 Page({
 
   /**
@@ -70,7 +72,7 @@ Page({
    * 获取用户信息
    */
   getUserInfoWithId() {
-    wx.request({
+    ZGetRequest({
       url: 'https://www.v2ex.com/api/members/show.json?id=' + this.data.id,
       success: res => {
         this.setData({user: res.data})

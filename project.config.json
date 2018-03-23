@@ -29,18 +29,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "two",
-					"pathName": "pages/two/two",
+					"id": 0,
+					"name": "zcool",
+					"pathName": "pages/zcool/home/home",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "one",
-					"pathName": "pages/canvas/canvas",
+					"name": "v2ex",
+					"pathName": "pages/v2/v2ex/v2ex",
 					"query": ""
 				}
 			]

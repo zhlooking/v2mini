@@ -4,6 +4,7 @@
   name="topic_cell"
   bindtap="handleClickTopic"
   class="topic"
+  data-post="{{topic}}"
   hover-class="topic-hover"
 >
   <view class="topic-head">

@@ -8,9 +8,9 @@
 }
 
 .topic-hover {
-  background-color: lightblue;
   padding-bottom: 12px;
   margin-bottom: 30px;
+  background-color: lightblue;
   border-bottom: 1px solid lightgray;
 }
 
@@ -20,7 +20,6 @@
   font-size: 12px;
   height: 40px;
   padding: 8px;
-  /* background-color: lightyellow; */
 }
 
 .head-left {

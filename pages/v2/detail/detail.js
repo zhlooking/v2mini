@@ -1,5 +1,6 @@
 // pages/v2detail/v2detail.js
 const util = require('../../../utils/util.js')
+import { ZGetRequest } from  '../../../utils/network.js'
 
 Page({
 
@@ -65,20 +66,20 @@ Page({
    * 获取帖子下的所有评论
    */
   getAllRepliesWithTopicId() {
-    wx.request({
-      url: 'https://www.v2ex.com/api/replies/show.json?topic_id=' + this.data.postId,
+    ZGetRequest({
+      url: `https://www.v2ex.com/api/replies/show.json?topic_id=${this.data.postId}`,
       success: res => {
-        this.setData({ replies: res.data.map(that.formatReply) })
+        this.setData({ replies: res.data.map(this.formatReply) })
       }
     })
   },
 
-  formatReply: function (reply) {
+  formatReply(reply) {
     return {
       ...reply,
       member: {
         ...reply.member,
-        last_modified: util.formatTime(new Date(item.last_modified * 1000)),
+        last_modified: util.formatTime(new Date(reply.last_modified * 1000)),
         avatar_large: 'https:' + reply.member.avatar_large,
         avatar_normal: 'https:' + reply.member.avatar_normal,
         avatar_mini: 'https:' + reply.member.avatar_mini,
@@ -89,14 +90,14 @@ Page({
   /**
    * 点击评论项目
    */
-  handleClickReply: function () {
+  handleClickReply() {
     console.warn('handleClickReply method not implemented')
   },
 
   /**
    * 点击评论中用户头像
    */
-  handleClickUserAvatar: function (evt) {
+  handleClickUserAvatar(evt) {
     const user = evt.currentTarget.dataset.user;
 
     wx.navigateTo({

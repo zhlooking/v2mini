@@ -1,5 +1,9 @@
 /* pages/v2/node_detail/node_detail.wxss */
 
+page {
+   background-color: #eee;
+}
+
 .empty-holder {
   height: 200rpx;
   display: flex;
