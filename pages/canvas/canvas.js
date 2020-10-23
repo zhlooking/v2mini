@@ -47,7 +47,7 @@ Page({
     ctx.drawImage(face, 30, 402, 42, 42);
     ctx.drawImage(qr, 285, 494, 60, 60);
     ctx.draw(true, () => {
-      toFile()
+      // toFile()
     });
 
     function toFile() {

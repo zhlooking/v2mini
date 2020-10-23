@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/video/index",
     "pages/logs/logs",
     "pages/v2/v2ex/v2ex",
     "pages/v2/detail/detail",
@@ -25,7 +26,7 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/canvas/canvas",
         "text": "首页",
         "iconPath": "images/wechat.png",
         "selectedIconPath": "images/wechatHL.png"
@@ -43,7 +44,7 @@
         "selectedIconPath": "images/icon_component_HL.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/video/index",
         "text": "日志",
         "iconPath": "images/icon_API.png",
         "selectedIconPath": "images/icon_API_HL.png"

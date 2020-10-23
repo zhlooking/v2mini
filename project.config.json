@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -42,6 +42,13 @@
 					"name": "v2ex",
 					"pathName": "pages/v2/v2ex/v2ex",
 					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "video",
+					"pathName": "pages/video/index",
+					"query": "",
+					"scene": 1017
 				}
 			]
 		}
